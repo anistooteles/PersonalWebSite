@@ -1,0 +1,22 @@
+<div class="header" [ngClass]="{ dark: isOn }">
+  <div class="header__container" [ngClass]="{ dark: isOn }">
+    <div class="header__button">
+      <i
+        *ngIf="!isOn; else elseBlock"
+        class="far fa-lightbulb"
+        (click)="turnOn()"
+      ></i>
+      <ng-template #elseBlock
+        ><i class="fas fa-lightbulb light-on" (click)="turnOn()"></i>
+      </ng-template>
+    </div>
+    <div class="header__profile">
+      <div class="header__title">
+        <h1>Anahí Ruiz</h1>
+        <h2>Business Analyst</h2>
+        <div class="header__pro-button" [ngClass]="{ light: !isOn }"></div>
+      </div>
+      <div class="header__picture" [ngClass]="{ dark: isOn }"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="footer" [ngClass]="{ dark: isOn }">
+  <div class="footer__menu">
+    <div
+      class="footer__icon ln"
+      (mouseenter)="changeColor()"
+      (click)="redirectTo('http://linkedin.com/in/anahí-ruiz-90015b88')"
+    >
+      <!-- <a href="http://linkedin.com/in/anahí-ruiz-90015b88"> </a> -->
+    </div>
+    <div
+      class="footer__icon fb"
+      (mouseenter)="changeColor()"
+      (click)="redirectTo('https://www.facebook.com/anahii.ruiz/')"
+    >
+      <!-- <a href="https://www.facebook.com/anahii.ruiz/"> </a> -->
+    </div>
+    <div
+      class="footer__icon tw"
+      (mouseenter)="changeColor()"
+      (click)="redirectTo('https://twitter.com/anistooteles')"
+    >
+      <!-- <a href="https://twitter.com/anistooteles"> </a> -->
+    </div>
+    <div
+      class="footer__icon email"
+      (mouseenter)="changeColor()"
+      (click)="redirectTo('mailto: anahi.ruiz@ymail.com')"
+    >
+      <!-- <a href="mailto: anahi.ruiz@ymail.com"> </a> -->
+    </div>
+  </div>
+  <div class="footer__menu-pro" (mouseenter)="changeColor()">
+    <div class="footer__pro-button" [ngClass]="{ light: !isOn }"></div>
+  </div>
+  <div class="footer__about-me">jjjjj</div>
+</div>

@@ -1,0 +1,200 @@
+@import '../../../theme.scss';
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+.header {
+  &__pro-button {
+    @include mobile {
+      display: none;
+    }
+    &.light {
+      &::after {
+        content: 'Download Resume!';
+        text-align: center;
+        line-height: 40px;
+        font-size: 12px;
+        font-family: $footer-pro-button;
+        color: rgb(19, 20, 22);
+        font-weight: bold;
+        z-index: 5;
+        position: absolute;
+        display: block;
+        border-radius: 180px;
+        width: 92%;
+        height: 80%;
+        top: 10%;
+        left: 4%;
+        background-color: rgba(235, 235, 235, 1);
+      }
+    }
+
+    width: 150px;
+    height: 50px;
+    border-radius: 180px;
+    position: relative;
+    left: calc(50% - 75px);
+    top: calc(50% - 25px);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+    );
+    cursor: pointer;
+    line-height: 12px;
+
+    &:hover {
+      &::before {
+        opacity: 1;
+        transition: 0.3s opacity ease-in-out;
+        filter: blur(25px);
+        background: linear-gradient(
+          60deg,
+          #f79533,
+          #f37055,
+          #ef4e7b,
+          #a166ab,
+          #5073b8,
+          #1098ad,
+          #07b39b,
+          #6fba82
+        );
+      }
+    }
+
+    &::before {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      display: block;
+      width: 80%;
+      height: 70%;
+      top: 15%;
+      left: 10%;
+      transition: 0.3s opacity ease-in-out;
+      filter: blur(15px);
+      opacity: 0;
+      background: linear-gradient(
+        60deg,
+        #f79533,
+        #f37055,
+        #ef4e7b,
+        #a166ab,
+        #5073b8,
+        #1098ad,
+        #07b39b,
+        #6fba82
+      );
+    }
+    &::after {
+      content: 'Download Resume!';
+      text-align: center;
+      line-height: 40px;
+      font-size: 12px;
+      font-family: $footer-pro-button;
+      color: rgba(235, 235, 235, 1);
+      font-weight: bold;
+      z-index: 5;
+      position: absolute;
+      display: block;
+      border-radius: 180px;
+      width: 92%;
+      height: 80%;
+      top: 10%;
+      left: 4%;
+      background-color: rgb(19, 20, 22);
+    }
+  }
+
+  height: 65%;
+
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 5vh;
+
+    i {
+      cursor: pointer;
+      text-shadow: 0 0 10px rgb(168, 23, 125);
+      transition: all ease-in 2000ms;
+      &.light-on {
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+    }
+  }
+  &__container {
+    height: 100%;
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    background: $header-background;
+    background-size: $header-background-size;
+    color: black;
+    &.dark {
+      background-image: none;
+      background-color: black;
+      color: white;
+    }
+  }
+  &__profile {
+    max-width: 600px;
+    max-height: 300px;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @include mobile {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  &__title {
+    text-align: center;
+    font-family: $header-font;
+    * {
+      margin: 0;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    @include mobile {
+      h1 {
+        font-size: 2.5em;
+      }
+    }
+  }
+  &__picture {
+    width: 35vw;
+    height: 35vw;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50%;
+    background-image: url('../../../assets/img/photo.jpg');
+    background-position: top center;
+    background-size: cover;
+    border: double 3px;
+    &.dark {
+      background-image: url('../../../assets/img/photo-dark.jpeg');
+      background-position: bottom center;
+      background-size: cover;
+    }
+  }
+}

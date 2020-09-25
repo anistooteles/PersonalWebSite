@@ -1,0 +1,33 @@
+$text-color: #f5f5f5;
+$icon-color: #f783ac;
+// $header-font: 'Ranchers', cursive;
+// $header-font: 'Syncopate', sans-serif;
+// $header-font: 'Love Ya Like A Sister', cursive;
+$header-font: 'Emilys Candy', cursive;
+$footer-pro-button: 'Courier Prime', monospace;
+
+$header-background: rgba(235, 235, 235, 1);
+// $header-background: repeating-radial-gradient(
+//     circle at center center,
+//     rgba(149, 80, 223, 0.32) 0px,
+//     rgba(149, 80, 223, 0.32) 4px,
+//     transparent 4px,
+//     transparent 7px
+//   ),
+//   linear-gradient(0deg, hsl(314, 22%, 62%) 0%, hsl(314, 22%, 62%) 74%);
+
+$header-background-dark: repeating-radial-gradient(
+    circle at center center,
+    rgba(0, 0, 0, 0.32) 0px,
+    rgba(0, 0, 0, 0.32) 4px,
+    transparent 4px,
+    transparent 7px
+  ),
+  linear-gradient(0deg, hsl(0, 0%, 9%) 0%, hsl(0, 0%, 7%) 74%);
+$header-background-size: 25px 25px;
+
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
