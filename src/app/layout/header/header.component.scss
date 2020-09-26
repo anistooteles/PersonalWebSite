@@ -120,10 +120,12 @@
   }
 
   height: 65%;
-
+  &__action-button {
+    display: flex;
+    justify-content: space-between;
+  }
   &__button {
     display: flex;
-    justify-content: flex-end;
     font-size: 5vh;
 
     i {
@@ -133,6 +135,8 @@
       &.light-on {
         animation: glow 1s ease-in-out infinite alternate;
       }
+    }
+    &--lang {
     }
   }
   &__container {

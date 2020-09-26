@@ -117,11 +117,13 @@
   &__menu {
     display: flex;
     justify-content: space-between;
-    padding: 0 30% 10px 30%;
+    padding-right: calc(50% - 300px);
+    padding-left: calc(50% - 300px);
     height: 35%;
 
     @include mobile {
       padding: 0 25% 10px 25%;
+      height: 20%;
     }
   }
   &.dark {
@@ -223,6 +225,23 @@
         font-weight: 900;
         content: '\f0e0';
       }
+    }
+  }
+
+  &__about-me {
+    font-family: $footer-pro-button;
+    padding-right: calc(50% - 300px);
+    padding-left: calc(50% - 300px);
+    background-color: black;
+    text-align: justify;
+    &.light {
+      color: black;
+      background-color: rgba(235, 235, 235, 1);
+    }
+
+    @include mobile {
+      padding: 10px 15% 10px 15%;
+      font-size: 12px;
     }
   }
 }

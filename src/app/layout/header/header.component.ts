@@ -22,4 +22,7 @@ export class HeaderComponent implements OnInit {
     this.isOn = !this.isOn;
     this.changeTheme.emit(this.isOn);
   }
+  redirectTo(url: string): void {
+    window.open(url, '_blank');
+  }
 }

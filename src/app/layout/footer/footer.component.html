@@ -30,7 +30,20 @@
     </div>
   </div>
   <div class="footer__menu-pro" (mouseenter)="changeColor()">
-    <div class="footer__pro-button" [ngClass]="{ light: !isOn }"></div>
+    <div
+      class="footer__pro-button"
+      [ngClass]="{ light: !isOn }"
+      (click)="
+        redirectTo(
+          'https://drive.google.com/file/d/1-aPHOOdmYCYfJvDhLkRrA9PFQUnMVyTs/view?usp=sharing'
+        )
+      "
+    ></div>
   </div>
-  <div class="footer__about-me">jjjjj</div>
+  <div class="footer__about-me" [ngClass]="{ light: !isOn }">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium facilis
+    exercitationem tempora enim, consectetur esse sit ipsa quia vitae qui,
+    quidem incidunt odit voluptate nesciunt repudiandae accusamus! Temporibus,
+    rem illum!
+  </div>
 </div>
