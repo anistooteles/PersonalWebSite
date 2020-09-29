@@ -120,14 +120,25 @@
   }
 
   height: 65%;
+
+  @include xs-height {
+    height: unset;
+  }
+
+  @include xs-width {
+    width: unset;
+  }
+
   &__action-button {
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    width: calc(100% - 60px);
   }
   &__button {
     display: flex;
-    font-size: 5vh;
-
+    // font-size: 5vh;
+    font-size: clamp(25px, 5vh, 35px);
     i {
       cursor: pointer;
       text-shadow: 0 0 10px rgb(168, 23, 125);
@@ -145,7 +156,7 @@
     padding: 30px;
     flex-direction: column;
     background: $header-background;
-    background-size: $header-background-size;
+
     color: black;
     &.dark {
       background-image: none;
@@ -162,7 +173,14 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    @include xs-height {
+      height: unset;
+    }
 
+    @include xs-width {
+      width: unset;
+      max-height: unset;
+    }
     @include mobile {
       flex-direction: column;
       text-align: center;
@@ -177,13 +195,28 @@
     h1 {
       font-size: 3em;
     }
+
     @include mobile {
       h1 {
         font-size: 2.5em;
       }
     }
+    @include xs-width {
+      h1,
+      h2 {
+        font-size: 1em;
+      }
+    }
   }
   &__picture {
+    @include xs-width {
+      min-height: unset;
+      min-width: unset;
+    }
+    @include xs-height {
+      min-height: unset;
+      min-width: unset;
+    }
     width: 35vw;
     height: 35vw;
     min-width: 200px;
