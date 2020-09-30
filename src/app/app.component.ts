@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'personalWebSite';
   isOn: boolean;
+  lang: boolean;
+
   onChangeTheme(event: boolean): void {
     this.isOn = event;
-    console.log(event);
+  }
+
+  onChangeLang(event: boolean): void {
+    this.lang = event;
+    console.log(this.lang, 'app');
   }
 }

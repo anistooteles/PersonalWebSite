@@ -36,6 +36,12 @@
       }
     }
 
+    &.esp {
+      &::after {
+        content: '¡Descargar CV!';
+      }
+    }
+
     width: 150px;
     height: 50px;
     border-radius: 180px;

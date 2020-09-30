@@ -1,3 +1,6 @@
-<app-header (changeTheme)="onChangeTheme($event)"></app-header>
+<app-header
+  (changeTheme)="onChangeTheme($event)"
+  (changeLanguage)="onChangeLang($event)"
+></app-header>
 <router-outlet></router-outlet>
-<app-footer [isOn]="isOn"></app-footer>
+<app-footer [isOn]="isOn" [lang]="lang"></app-footer>

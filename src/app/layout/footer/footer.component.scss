@@ -32,6 +32,12 @@
       }
     }
 
+    &.esp {
+      &::after {
+        content: '¡Descargar CV!';
+      }
+    }
+
     width: 150px;
     height: 50px;
     border-radius: 180px;
@@ -230,6 +236,13 @@
           text-align: center;
           @include mobile {
             font-size: 4vw;
+          }
+        }
+      }
+      &.esp {
+        &:hover {
+          &::before {
+            content: '¡Escríbeme!';
           }
         }
       }

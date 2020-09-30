@@ -31,6 +31,8 @@ export class FooterComponent implements OnInit {
     '#d2df35',
   ];
   @Input() isOn: boolean;
+  @Input() lang: boolean;
+
   constructor() {}
 
   getRandomColor(): string {
@@ -53,7 +55,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.setRandomColor();
-    console.log(this.isOn);
+    console.log(this.lang, 'esp');
   }
 
   changeColor(): void {

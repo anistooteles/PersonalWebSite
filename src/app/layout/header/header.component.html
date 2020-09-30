@@ -5,10 +5,10 @@
         <i
           *ngIf="!isOn; else elseBlockGlobe"
           class="fas fa-globe"
-          (click)="turnOn()"
+          (click)="changeLang()"
         ></i>
         <ng-template #elseBlockGlobe
-          ><i class="fas fa-globe light-on" (click)="turnOn()"></i>
+          ><i class="fas fa-globe light-on" (click)="changeLang()"></i>
         </ng-template>
       </div>
       <div class="header__button">
@@ -25,10 +25,14 @@
     <div class="header__profile">
       <div class="header__title">
         <h1>Anahí Ruiz</h1>
-        <h2>Business Analyst</h2>
+        <h2 *ngIf="lang; else elseEsp">Business Analyst</h2>
+        <ng-template #elseEsp>
+          <h2>Análista de Negocio</h2>
+        </ng-template>
+
         <div
           class="header__pro-button"
-          [ngClass]="{ light: !isOn }"
+          [ngClass]="{ light: !isOn, esp: !lang }"
           (click)="
             redirectTo(
               'https://drive.google.com/file/d/1-aPHOOdmYCYfJvDhLkRrA9PFQUnMVyTs/view?usp=sharing'

@@ -25,6 +25,7 @@
       class="footer__icon email"
       (mouseenter)="changeColor()"
       (click)="redirectTo('mailto: anahi.ruiz@ymail.com')"
+      [ngClass]="{ esp: !lang }"
     >
       <!-- <a href="mailto: anahi.ruiz@ymail.com"> </a> -->
     </div>
@@ -32,7 +33,7 @@
   <div class="footer__menu-pro" (mouseenter)="changeColor()">
     <div
       class="footer__pro-button"
-      [ngClass]="{ light: !isOn }"
+      [ngClass]="{ light: !isOn, esp: !lang }"
       (click)="
         redirectTo(
           'https://drive.google.com/file/d/1-aPHOOdmYCYfJvDhLkRrA9PFQUnMVyTs/view?usp=sharing'
@@ -40,10 +41,22 @@
       "
     ></div>
   </div>
-  <div class="footer__about-me" [ngClass]="{ light: !isOn }">
+  <div
+    class="footer__about-me"
+    [ngClass]="{ light: !isOn }"
+    *ngIf="lang; else elseEspAbt"
+  >
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium facilis
     exercitationem tempora enim, consectetur esse sit ipsa quia vitae qui,
     quidem incidunt odit voluptate nesciunt repudiandae accusamus! Temporibus,
     rem illum!
   </div>
+  <ng-template #elseEspAbt>
+    <div class="footer__about-me" [ngClass]="{ light: !isOn }">
+      español Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem
+      minus perspiciatis nam nisi laborum quo in similique, expedita temporibus
+      fugiat cupiditate? Soluta quis quo autem. Vel corrupti molestiae
+      quisnecessitatibus.
+    </div>
+  </ng-template>
 </div>
